@@ -1,0 +1,38 @@
+package com.pooja.my_actionbar_viewpager;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+
+import java.util.List;
+
+
+/**
+ * Created by Pooja on 1/1/2017.
+ */
+
+public class Page_Adapter extends FragmentPagerAdapter {
+
+    public Page_Adapter(FragmentManager fm)
+    {
+        super(fm);
+
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        switch (position)
+        {
+            case 0:
+                return new fragment_audio();
+            case 1:
+                return new fragment_video();
+        }
+        return null;
+    }
+
+    @Override
+    public int getCount() {
+        return 2;
+    }
+}
